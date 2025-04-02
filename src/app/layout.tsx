@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Playfair_Display, Inter, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import Footer from "@/component/footer";
 import Header from "@/component/header";
 import MobileHeader from "@/component/mobile-header";
 import { CalculatorProvider } from "@/context/CalculatorContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sourceCodePro = Source_Code_Pro({
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -38,7 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${playfair.variable} ${geistSans.variable} ${geistMono.variable} antialiased font-sans min-h-screen w-full bg-pink-50 flex flex-col`}
+        className={`${playfair.variable} ${inter.variable} ${sourceCodePro.variable} antialiased font-sans min-h-screen w-full bg-pink-50 flex flex-col`}
       >
         <CalculatorProvider>
           <MobileHeader />
